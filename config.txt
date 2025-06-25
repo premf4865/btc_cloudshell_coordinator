@@ -1,0 +1,41 @@
+# Fichier de configuration pour le solveur de puzzle Bitcoin OPTIMISÉ
+# Modifiez les valeurs ci-dessous puis relancez le programme.
+
+# Plage de recherche (peut être en décimal ou en hexadécimal préfixé par 0x)
+start=0x400000000000000000
+end=0x3ffffffffffffffffff
+
+# Nombre de coeurs CPU à utiliser (0 = détection automatique)
+cores=0
+
+# Mode de recherche : 'random', 'sequential', 'smart', 'kangaroo'
+mode=smart
+
+# Après combien d'essais sauter vers un nouvel emplacement aléatoire
+switch_interval=100000
+
+# Ratio de la taille du sous-intervalle (ex: 0.001 pour 0.1%)
+subinterval_ratio=0.1
+
+# Arrêter le programme dès qu'une clé est trouvée ? (true ou false)
+stop_on_find=true
+
+# Fichier contenant la liste des adresses Bitcoin à trouver
+puzzle_file=puzzle.txt
+
+# Algorithmes avancés
+baby_steps=true
+giant_steps=true
+bloom_filter=false
+smart_jump=true
+
+# Paramètres de performance
+batch_size=10000
+checkpoint_interval=10000000
+
+# Configuration Telegram (optionnel)
+# Créez un bot avec @BotFather et obtenez le token
+# Ajoutez le bot à un chat et obtenez le chat_id avec @userinfobot
+
+telegram_bot_token=8165139245:AAGeULACnQhrJJ_H6GcCxYSZ9Tlik4DIywY
+telegram_chat_id=1897547972

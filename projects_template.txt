@@ -1,0 +1,47 @@
+# Configuration des Projets Google Cloud
+# Format: PROJECT_ID:ZONE:USERNAME
+# 
+# PROJECT_ID = ID de votre projet Google Cloud
+# ZONE = Zone géographique (optionnel, défaut: us-central1-a)  
+# USERNAME = Nom d'utilisateur SSH (optionnel, défaut: cloudshell)
+#
+# Zones recommandées pour la performance:
+# - us-central1-a (Iowa, USA)
+# - us-east1-b (Caroline du Sud, USA)
+# - europe-west1-b (Belgique)
+# - asia-southeast1-a (Singapour)
+# - australia-southeast1-a (Sydney)
+#
+# EXEMPLES:
+# mon-projet-bitcoin-1:us-central1-a:cloudshell
+# mon-projet-bitcoin-2:europe-west1-b:cloudshell
+# mon-projet-bitcoin-3:asia-southeast1-a
+# mon-projet-bitcoin-4
+
+# Ajoutez vos projets ici (un par ligne):
+
+# Projet principal
+# your-main-project:us-central1-a:cloudshell
+
+# Projets secondaires  
+# your-backup-project-1:us-east1-b:cloudshell
+# your-backup-project-2:europe-west1-b:cloudshell
+# your-backup-project-3:asia-southeast1-a:cloudshell
+
+# Projets de test
+# test-project-1:us-central1-c:cloudshell
+# test-project-2:us-west1-a:cloudshell
+
+# NOTES IMPORTANTES:
+# 1. Chaque projet Google Cloud peut avoir un seul environnement Cloud Shell actif
+# 2. Assurez-vous d'avoir les permissions nécessaires sur tous les projets
+# 3. Les projets doivent avoir l'API Cloud Shell activée
+# 4. Recommandation: utilisez différentes zones pour répartir la charge
+# 5. Vous pouvez avoir jusqu'à 12 projets gratuits par compte Google
+#
+# Pour créer de nouveaux projets:
+# 1. Allez sur https://console.cloud.google.com/
+# 2. Cliquez sur "Nouveau Projet"
+# 3. Donnez un nom unique au projet
+# 4. Notez l'ID du projet (pas le nom)
+# 5. Ajoutez l'ID ici dans ce fichier

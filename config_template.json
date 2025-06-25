@@ -1,0 +1,67 @@
+{
+  "deployment_config": {
+    "binary_name": "bitcoin_puzzle_solver",
+    "puzzle_file": "puzzle.txt",
+    "working_directory": "~/bitcoin_solver",
+    "max_parallel_deployments": 5,
+    "deployment_timeout": 300,
+    "retry_attempts": 3,
+    "health_check_interval": 30
+  },
+  "solver_config": {
+    "total_start_range": "0x20000000000000000",
+    "total_end_range": "0x3ffffffffffffffff",
+    "mode": "smart",
+    "switch_interval": 1000000,
+    "batch_size": 10000,
+    "checkpoint_interval": 10000000,
+    "telegram_notifications": {
+      "enabled": false,
+      "bot_token": "",
+      "chat_id": ""
+    }
+  },
+  "cloud_config": {
+    "default_zone": "us-central1-a",
+    "default_machine_type": "e2-micro",
+    "required_apis": [
+      "cloudshell.googleapis.com",
+      "compute.googleapis.com"
+    ],
+    "max_instances_per_project": 1,
+    "instance_naming_pattern": "puzzle-solver-{index}"
+  },
+  "monitoring": {
+    "stats_interval": 10,
+    "log_level": "INFO", 
+    "log_file": "coordinator.log",
+    "performance_metrics": true,
+    "auto_restart_failed": true,
+    "max_restart_attempts": 3
+  },
+  "security": {
+    "allowed_regions": [
+      "us-central1",
+      "us-east1", 
+      "europe-west1",
+      "asia-southeast1"
+    ],
+    "firewall_rules": [],
+    "ssh_key_path": "~/.ssh/id_rsa"
+  },
+  "optimization": {
+    "auto_scale": false,
+    "min_instances": 1,
+    "max_instances": 50,
+    "scale_up_threshold": 0.8,
+    "scale_down_threshold": 0.3,
+    "rebalance_interval": 300,
+    "smart_range_distribution": true
+  },
+  "backup": {
+    "checkpoint_backup": true,
+    "backup_interval": 3600,
+    "backup_location": "gs://your-bucket/checkpoints/",
+    "keep_backups": 7
+  }
+}
